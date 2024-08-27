@@ -15,3 +15,34 @@ def f(s):
 
 result = f(s)
 print(result)
+
+ #Use collections.Counter, which is optimized for counting hashable items
+from collections import Counter
+
+def f(s):
+    return Counter(s)
+
+result = f(s)
+print(result)
+
+# import unittest
+# from collections import Counter
+
+# def f(s):
+#     return Counter(s)
+
+# class TestCharacterFrequency(unittest.TestCase):
+#     def test_empty_string(self):
+#         self.assertEqual(f(''), Counter())
+    
+#     def test_single_character(self):
+#         self.assertEqual(f('a'), Counter({'a': 1}))
+    
+#     def test_multiple_characters(self):
+#         self.assertEqual(f('aabbcc'), Counter({'a': 2, 'b': 2, 'c': 2}))
+    
+#     def test_special_characters(self):
+#         self.assertEqual(f('abc!@#'), Counter({'a': 1, 'b': 1, 'c': 1, '!': 1, '@': 1, '#': 1}))
+
+# if __name__ == '__main__':
+#     unittest.main()
